@@ -17,12 +17,35 @@ module.exports = function(app) {
   });
 
   app.post("/api/notes", function(req, res) {
-    console.log("Getting post reqeusts");
-    let dbArr = fs.readFile("./db/db.json");
-    let nextID = dbArr.length;
-    let newNote = res.body;
-    newNote[id] = nextID;
-    dbArr.push(newNote);
-    fs.writeFile('./db/db.json', dbArr);
+    fs.readFile("./db/db.json", (err, data) => {
+      if (err) throw err;
+      let oldData = JSON.parse(data);
+      let nextID = oldData.length !== 0 ? Math.max(...Object.keys(oldData)) + 1 : 0;
+      let newNote = req.body;
+      newNote["id"] = nextID;
+      oldData.push(newNote);
+      let dataStr = JSON.stringify(oldData)
+      writeData(dataStr);
+    });
   });
+
+  app.delete("/api/notes/:id", function(req, res) {
+    let delID = req.params.id;
+    fs.readFile("./db/db.json", (err, data) => {
+      if (err) throw err;
+      let oldData = JSON.parse(data);
+      let newData = oldData.filter(note => note.id !== +delID)
+      console.log("New data is:", newData);
+      let dataStr = JSON.stringify(newData)
+      writeData(dataStr);
+    })
+  })
 };
+
+function writeData(data) {
+  fs.writeFile('./db/db.json', data, (err) => {
+    if (err) throw err;
+    console.log("Data has been written to file.")
+  });
+}
+
