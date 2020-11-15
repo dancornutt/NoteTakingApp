@@ -1,11 +1,6 @@
 const path = require("path");
 const fs = require("fs");
 
-
-// ===============================================================================
-// ROUTING
-// ===============================================================================
-
 module.exports = function(app) {
 
   app.get("/api/notes", function(req, res) {
@@ -26,6 +21,7 @@ module.exports = function(app) {
       oldData.push(newNote);
       let dataStr = JSON.stringify(oldData)
       writeData(dataStr);
+      res.send(newNote);
     });
   });
 
@@ -35,7 +31,6 @@ module.exports = function(app) {
       if (err) throw err;
       let oldData = JSON.parse(data);
       let newData = oldData.filter(note => note.id !== +delID)
-      console.log("New data is:", newData);
       let dataStr = JSON.stringify(newData)
       writeData(dataStr);
     })
