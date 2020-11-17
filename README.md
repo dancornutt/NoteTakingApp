@@ -36,7 +36,7 @@ This web server is hosted via heroku, you can view the client application at the
 
 ## Built With
 
-* [express](https://expressjs.com/) - js web server framework
+* [express](https://expressjs.com/) - JS web server framework
 * [heroku](https://www.heroku.com/) - Site for hosting server
 * [git](https://git-scm.com/) - Version control
 * [GitHub](https://github.com/) - Used to store the code base
