@@ -8,23 +8,23 @@ The intent of this project is to create an express backend to serve up html file
 
 You'll need to have a good text editor or IDE for making edits to the code. For this project VS Code was used and was very useful.
 Below are the tools used for this site:
-    * Text Editor
-    * Git
-    * Github account
-    * Heroku CLI & Account
-    * Browser (Chrome was used for development)
+ * Text Editor
+ * Git
+ * Github account
+ * Heroku CLI & Account
+ * Browser (Chrome was used for development)
 
 ### Installing
 
 These are the installation steps to get the site up and running:
- * 
-    * Log into Github
-    * Fork this repo 
-    * Clone your Forked repo on your local machine
-    * Navigate to the working directory containing app.js
-    * run 'npm i' to install dependencies
-    * run 'node server.js' to start server
-    * In your browser go to 'localhost:8080' or see it live on heroku: https://secret-inlet-71024.herokuapp.com/
+ 
+ * Log into Github
+ * Fork this repo 
+ * Clone your Forked repo on your local machine
+ * Navigate to the working directory containing app.js
+ * run 'npm i' to install dependencies
+ * run 'node server.js' to start server
+ * In your browser go to 'localhost:8080' or see it live on heroku: https://secret-inlet-71024.herokuapp.com/
     
 ## Running the tests
 
