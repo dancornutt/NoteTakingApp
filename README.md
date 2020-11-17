@@ -17,7 +17,7 @@ Below are the tools used for this site:
 ### Installing
 
 These are the installation steps to get the site up and running:
-
+ * 
     * Log into Github
     * Fork this repo 
     * Clone your Forked repo on your local machine
@@ -25,7 +25,7 @@ These are the installation steps to get the site up and running:
     * run 'npm i' to install dependencies
     * run 'node server.js' to start server
     * In your browser go to 'localhost:8080' or see it live on heroku: https://secret-inlet-71024.herokuapp.com/
-
+    
 ## Running the tests
 
 No tests were created for this project, that is a future collaboration need.
